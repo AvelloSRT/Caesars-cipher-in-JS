@@ -37,7 +37,7 @@
                 return;
             }
             let word1 = word.replace(/ /g,"");
-            let word3 = word.toLowerCase();
+            let word3 = word1.toLowerCase();
             let word2= word3.split("");
             let number = document.getElementById("n1").value;
             if(number == ""){
@@ -61,7 +61,7 @@
                 alert("Błąd! Nie wolno wprowadzać liczb.");
                 return;
             }
-            let word2 = toLowerCase();
+            let word2 = word.toLowerCase();
             let word1 = word2.split("");
             console.log(word1);
             let number = document.getElementById("n1").value;
