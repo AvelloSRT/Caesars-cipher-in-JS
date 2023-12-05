@@ -18,12 +18,12 @@
     <div id="div-right">
         <div class="div1">
         <input type="number" max="35" id="n1" placeholder="Shift"><br />
-        <input type="button" onclick="Encrypt()" value="Encrypt">
-        <input type="button" onclick="Decrypt()" value="Decrypt">
-        <input type="button" onclick="MoveDown()" value="Move Down">
+        <input type="button" onclick="Encrypt()" value="Encrypt" id="btn-encrypt">
+        <input type="button" onclick="Decrypt()" value="Decrypt" id="btn-decrypt">
+        <input type="button" onclick="MoveDown()" value="Move Down" id="btn-move">
         </div>
         <div class="div1">
-            <input type="button" value="Clear" onclick="Clear()" id="clear">
+            <input type="button" value="Clear" onclick="Clear()" id="btn-clear">
         </div>
     </div>
     <script>
@@ -32,8 +32,13 @@
         let x="";
         function Encrypt(){
             let word = document.getElementById("word1").value;
+            if (/\d/.test(word)) {
+                alert("Błąd! Nie wolno wprowadzać liczb.");
+                return;
+            }
             let word1 = word.replace(/ /g,"");
-            let word2= word1.split("");
+            let word3 = word.toLowerCase();
+            let word2= word3.split("");
             let number = document.getElementById("n1").value;
             if(number == ""){
                 number=3;
@@ -52,7 +57,12 @@
         }
         function Decrypt(){
             let word = document.getElementById("word2").value;
-            let word1 = word.split("");
+            if (/\d/.test(word)) {
+                alert("Błąd! Nie wolno wprowadzać liczb.");
+                return;
+            }
+            let word2 = toLowerCase();
+            let word1 = word2.split("");
             console.log(word1);
             let number = document.getElementById("n1").value;
             if(number == ""){
@@ -100,7 +110,7 @@
     #n1{
         margin-top: 30px;
     }
-    #clear{
+    #btn-clear{
         margin-top: 15%;
         width: 30%;
         height: 30%;
